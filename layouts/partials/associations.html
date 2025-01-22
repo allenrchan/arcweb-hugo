@@ -5,7 +5,8 @@
         <div class="row">
             <div class="col-lg-6">
                 <h2 class="block wow fadeInUp animated mb-5" data-wow-delay=".3s" data-wow-duration="500ms">
-                    ASSOCIATIONS</h2>
+                    ASSOCIATIONS
+                </h2>
             </div>
         </div>
 
@@ -18,7 +19,8 @@
                     <div class="img-wrapper">
                         <a href="{{ $association.link | absURL }}" target="_blank" rel="noopener noreferrer">
                             <img src="{{ $association.image | absURL }}" class="img-fluid" alt="Association Logo"
-                                width="150">
+                                 srcset="{{ $association.image | absURL }} 768w, {{ $association.image | absURL }} 1024w, {{ $association.image | absURL }} 1280w"
+                                 sizes="(max-width: 768px) 255px, (max-width: 1024px) 300px, 128px">
                         </a>
                     </div>
                 </figure>
