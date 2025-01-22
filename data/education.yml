@@ -1,0 +1,74 @@
+# data/education.yaml
+
+enable: true
+education:
+  - degree: "Master of Business Administration"
+    institution: "Hellenic American University"
+    duration: "2025"
+    description: "Management Information Systems"
+    bullet_points:
+      - "Strategic Thinking & Vision"
+      - "Planning Budgeting & Forecasting"
+      - "Financial Operations"
+      - "Information Security Management"
+      - "Global Cross-Functional Team Leadership"
+      - "Governance, Risk Management, and Compliance (GRC)"
+    link: "https://www.hau.edu.gr/"
+
+  - degree: "Master in Big Data and Business Intelligence"
+    institution: "Universidad Isabel I"
+    duration: "Dec 2024"
+    description: ""
+    bullet_points:
+      - "Big Data Analytics"
+      - "Data Governance"
+      - "Data Architecture"
+      - "Data Engineering"
+      - "Data Quality"
+      - "Enterprise Data Modeling"
+    link: "https://www.ui1.es/"
+
+  - degree: "Executive Presence"
+    institution: "Stanford Continuing Studies"
+    duration: "Nov 2024"
+    description: ""
+    bullet_points:
+      - "Authentic Leadership, Trust & Transparency"
+      - "Leadership Development Coaching"
+      - "Senior Stakeholder Management"
+    link: "https://continuingstudies.stanford.edu/"
+
+  - degree: "Futurist Leadership"
+    institution: "Stanford Continuing Studies"
+    duration: "Oct 2024"
+    description: ""
+    bullet_points:
+      - "Emerging Technologies"
+      - "Engineering & Technical Leadership"
+      - "Radical Product Thinking and Visionary Leadership"
+      - "Chaos Engineering"
+      - "Chaos Management"
+    link: "https://continuingstudies.stanford.edu/"
+
+  - degree: "Bachelor of Science, Library and Information Science"
+    institution: "University of the Philippines"
+    duration: "Jul 2001 - Jul 2003"
+    description: ""
+    bullet_points:
+      - "Data Governance"
+      - "Master Data Management"
+      - "Information Security Management"
+    link: "https://www.up.edu.ph/"
+
+  - degree: "Bachelor of Science, Computer Science"
+    institution: "University of the Philippines"
+    duration: "Jun 1997 - Jul 2021"
+    description: ""
+    bullet_points:
+      - "Software Systems Engineering"
+      - "Data Engineering"
+      - "Full-Stack Development"
+      - "System Architecture"
+      - "Data Warehouse Architecture"
+    link: "https://www.up.edu.ph/"
+

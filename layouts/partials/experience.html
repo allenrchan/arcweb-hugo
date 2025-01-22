@@ -1,0 +1,103 @@
+{{ if .Site.Data.experience.enable }}
+<!-- Experience Section -->
+<section id="experience" class="pages service-page">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="block wow fadeInUp animated mb-5" data-wow-delay=".3s" data-wow-duration="500ms">EXPERIENCE</h2>
+
+        <!-- Experience Card -->
+        <div class="card">
+          <!-- Nav Pills (Tabs) for Larger Devices (Horizontal) -->
+          <div class="card-header">
+            <!-- Horizontal Tabs for Larger Screens -->
+            <ul class="nav nav-pills d-none d-md-flex" id="experience-pills-tab" role="tablist">
+              {{ $first := true }}
+              {{ range .Site.Data.experience.experience }}
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link {{ if $first }}active{{ $first = false }}{{ end }}"
+                     id="experience-pills-{{ .job_title | urlize }}-tab"
+                     data-bs-toggle="pill"
+                     href="#experience-pills-{{ .job_title | urlize }}"
+                     role="tab"
+                     aria-controls="experience-pills-{{ .job_title | urlize }}"
+                     aria-selected="true"
+                     style="color: #004BA8;">
+                     {{ .job_title }}
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+
+            <!-- Dropdown for Mobile Devices -->
+            <div class="d-block d-md-none">
+              <div class="dropdown">
+                <button class="btn custom-btn dropdown-toggle" type="button" id="experience-dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select Job Title
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="experience-dropdownMenuButton">
+                  {{ range .Site.Data.experience.experience }}
+                    <li><a class="dropdown-item" id="experience-dropdown-{{ .job_title | urlize }}" data-bs-toggle="pill" href="#experience-pills-{{ .job_title | urlize }}" >{{ .job_title }}</a></li>
+                  {{ end }}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Content -->
+          <div class="card-body">
+            <div class="tab-content py-2 px-3" id="experience-pills-tabContent">
+              {{ range .Site.Data.experience.experience }}
+                <div class="tab-pane fade {{ if eq .job_title "Senior Software Developer" }}show active{{ end }}"
+                     id="experience-pills-{{ .job_title | urlize }}"
+                     role="tabpanel"
+                     aria-labelledby="experience-pills-{{ .job_title | urlize }}-tab">
+                  <h4 class="mb-3">{{ .job_title }} - {{ .company }}</h4>
+                  <p class="mb-2"></p>
+                  <p class="mb-3"><strong>{{ .duration }}</strong></p>
+                  <a href="{{ .link }}" target="_blank" class="btn custom-btn hvr-bounce-to-right btn-sm shadow-sm mb-3" role="button">
+                    View Project
+                  </a>
+                  <p class="mb-3"><strong>{{ .description }}</strong></p>
+                  <ul class="ps-4">
+                    {{ range .bullet_points }}
+                      <li class="mb-2">&bull; {{ . }}</li>
+                    {{ end }}
+                  </ul>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom JavaScript for Handling Dropdown Tab Change (Experience) -->
+<script>
+  document.querySelectorAll('#experience .dropdown-item').forEach(function(dropdownItem) {
+  dropdownItem.addEventListener('click', function(event) {
+    // Hide all active tab content in the experience section
+    var allTabs = document.querySelectorAll('#experience .tab-pane');
+    allTabs.forEach(function(tab) {
+      tab.classList.remove('show', 'active');
+    });
+
+    // Show the selected tab
+    var targetTab = document.querySelector(this.getAttribute('href'));
+    targetTab.classList.add('show', 'active');
+
+    // Update the active link in the experience section
+    var activeLink = document.querySelector('#experience .nav-link.active');
+    if (activeLink) {
+      activeLink.classList.remove('active');
+    }
+
+    document.querySelector(`#experience [href='${this.getAttribute('href')}']`).classList.add('active');
+  });
+});
+
+</script>
+
+{{ end }}

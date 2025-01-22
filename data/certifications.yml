@@ -1,0 +1,193 @@
+organizations:
+  - id: org1
+    logo: images/portfolio/item-4.jpg
+    name: Organization 1
+  - id: org2
+    logo: images/portfolio/item-5.jpg
+    name: Organization 2
+  - id: org3
+    logo: images/portfolio/item-6.jpg
+    name: Organization 3
+  - id: org4
+    logo: images/portfolio/item-4.jpg
+    name: Organization 4
+  - id: org5
+    logo: images/portfolio/item-5.jpg
+    name: Organization 5
+  - id: org6
+    logo: images/portfolio/item-6.jpg
+    name: Organization 6
+  - id: org7
+    logo: images/portfolio/item-4.jpg
+    name: Organization 7
+  - id: org8
+    logo: images/portfolio/item-5.jpg
+    name: Organization 8
+  - id: org9
+    logo: images/portfolio/item-6.jpg
+    name: Organization 9
+  - id: org10
+    logo: images/portfolio/item-6.jpg
+    name: Organization 10
+
+
+certifications:
+  - org: org1
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org1
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org1
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org1
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org1
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org1
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org1
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org1
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org1
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org1
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org2
+    logo: images/team/team-2.jpg
+    link: https://credly.com/
+  - org: org2
+    logo: images/team/team-2.jpg
+    link: https://credly.com/
+  - org: org2
+    logo: images/team/team-2.jpg
+    link: https://credly.com/
+  - org: org2
+    logo: images/team/team-2.jpg
+    link: https://credly.com/
+  - org: org3
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org3
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org3
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org3
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org3
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org3
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org3
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org3
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org4
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org4
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org4
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org4
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org5
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org5
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org5
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org5
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org5
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org6
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org6
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org6
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org6
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org7
+    logo: images/team/team-2.jpg
+    link: https://credly.com/
+  - org: org7
+    logo: images/team/team-2.jpg
+    link: https://credly.com/
+  - org: org7
+    logo: images/team/team-2.jpg
+    link: https://credly.com/
+  - org: org7
+    logo: images/team/team-2.jpg
+    link: https://credly.com/
+  - org: org7
+    logo: images/team/team-2.jpg
+    link: https://credly.com/
+  - org: org8
+    logo: images/team/team-2.jpg
+    link: https://credly.com/
+  - org: org8
+    logo: images/team/team-2.jpg
+    link: https://credly.com/
+  - org: org8
+    logo: images/team/team-2.jpg
+    link: https://credly.com/
+  - org: org8
+    logo: images/team/team-2.jpg
+    link: https://credly.com/
+  - org: org9
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org9
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org9
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org9
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org9
+    logo: images/team/team-4.jpg
+    link: https://credly.com/
+  - org: org10
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org10
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org10
+    logo: images/team/team-3.jpg
+    link: https://credly.com/
+  - org: org10
+    logo: images/team/team-3.jpg
+    link: https://credly.com/

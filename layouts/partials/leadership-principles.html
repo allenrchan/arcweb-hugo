@@ -1,0 +1,30 @@
+{{ if .Site.Data.leadership_principles.enable }}
+<section id="leadership-principles">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 class="block wow fadeInUp animated mb-5" data-wow-delay=".3s" data-wow-duration="500ms">LEADERSHIP PRINCIPLES</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      {{ range $index, $principle := .Site.Data.leadership_principles.principles }}
+      <div class="col-md-4 col-sm-6 d-flex justify-content-center flex-wrap">
+        {{ $delay := mul $index 300 }}
+        <figure class="logo mx-3 wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms" data-wow-delay="{{ $delay }}ms">
+          <div class="img-wrapper">
+            <a href="{{ $principle.blog | absURL }}">
+              <img src="{{ $principle.image | absURL }}" class="img-fluid" alt="{{ $principle.title }}" width="300">
+            </a>
+          </div>
+        </figure>
+        <h5 class="card-title">
+          <a href="{{ $principle.blog }}" class="card-link">{{ $principle.title }}</a>
+        </h5>
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+{{ end }}

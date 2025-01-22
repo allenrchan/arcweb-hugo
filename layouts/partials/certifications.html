@@ -1,0 +1,179 @@
+<section id="certifications" class="pages service-page">
+    <div class="container mt-5">
+        <!-- Organization Logos (Visible on Large Screens) -->
+        <div class="row mb-4 d-none d-md-flex">
+            <div class="col-12 d-flex justify-content-center flex-wrap org-logos">
+                <!-- Non-scrolling organization logos from YAML -->
+                {{ range $index, $element := .Site.Data.certifications.organizations }}
+                <div class="logo mx-3 wow fadeInUp animated" data-wow-duration="500ms"
+                    data-wow-delay="{{ mul $index 300 }}ms" onclick="filterCerts('{{ .id }}')">
+                    <img src="{{ .logo }}" alt="{{ .name }}" class="img-fluid" width="150">
+                </div>
+                {{ end }}
+            </div>
+        </div>
+
+        <!-- Dropdown for Organization Selection (Only on Small/Medium Screens) -->
+        <div class="row mb-4 d-md-none">
+            <div class="col-12">
+                <select class="form-control" onchange="filterCerts(this.value)">
+                    <option value="">Select Organization</option>
+                    {{ range .Site.Data.certifications.organizations }}
+                    <option value="{{ .id }}">
+                        <img src="{{ .logo }}" alt="{{ .name }}" class="img-fluid" width="30" style="margin-right: 10px;">
+                        {{ .name }}
+                    </option>
+                    {{ end }}
+                </select>
+            </div>
+        </div>
+
+        <!-- Certification Logos (Scrollable) -->
+        <div class="row">
+            <div class="col-12">
+                <div class="cert-container">
+                    <div class="cert-list" id="cert-list">
+                        <!-- Certification logos from YAML -->
+                        {{ range .Site.Data.certifications.certifications }}
+                        <div class="cert {{ .org }}">
+                            <img src="{{ .logo }}" alt="Certification" width="100"
+                                onclick="window.open('{{ .link }}', '_blank')">
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Make logos desaturated initially */
+    .logo img,
+    .cert img {
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+    }
+
+    /* Hovering over logos restores color */
+    .logo:hover img,
+    .cert:hover img {
+        filter: grayscale(0%);
+    }
+
+    /* Container for cert list */
+    .cert-container {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+    }
+
+    /* Scrollable cert list */
+    .cert-list {
+        display: flex;
+        gap: 20px;
+        animation: scroll-cert-list 50s linear infinite;
+    }
+
+    @keyframes scroll-cert-list {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Hovering over the cert list stops scrolling */
+    .cert-list:hover {
+        animation-play-state: paused;
+        cursor: pointer;
+    }
+
+    .cert {
+        cursor: pointer;
+    }
+
+    .cert:hover img {
+        filter: grayscale(0%);
+    }
+
+    .org-logos {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .org-logos .logo {
+        cursor: pointer;
+    }
+
+    /* Center certifications when <= 4 */
+    .cert-container.center {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 991px) {
+        /* On medium and smaller screens, hide logos and show dropdown */
+        .d-md-flex {
+            display: none;
+        }
+
+        .d-md-none {
+            display: block;
+        }
+
+        /* Style the dropdown */
+        select {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        select img {
+            margin-right: 10px;
+        }
+    }
+</style>
+
+<script>
+    function filterCerts(org) {
+        const certs = document.querySelectorAll('.cert');
+        const certList = document.getElementById('cert-list');
+        const certContainer = document.querySelector('.cert-container');
+
+        // Reset scroll animation
+        certList.style.animation = 'none';
+        certList.offsetHeight; // Trigger reflow to reset animation
+
+        // Show or hide certifications based on the selected organization
+        certs.forEach(cert => {
+            if (cert.classList.contains(org) || org === '') {
+                cert.style.display = 'block'; // Show matching certs or all if no org is selected
+            } else {
+                cert.style.display = 'none'; // Hide non-matching certs
+            }
+        });
+
+        // Check the number of visible certifications
+        const visibleCerts = document.querySelectorAll('.cert[style="display: block;"]');
+
+        // Add or remove the 'center' class based on the number of visible certifications
+        if (visibleCerts.length <= 4) {
+            certContainer.classList.add('center');
+            certList.style.animation = 'none'; // Stop scrolling
+        } else {
+            certContainer.classList.remove('center');
+            certList.style.animation = 'scroll-cert-list 50s linear infinite'; // Restart scrolling
+        }
+    }
+</script>

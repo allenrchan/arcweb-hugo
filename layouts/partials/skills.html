@@ -1,0 +1,36 @@
+{{ if .Site.Data.skills.enable }}
+{{ "<!-- Skills Section Start -->" | safeHTML }}
+<section id="skills">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 class="block wow fadeInUp animated mb-5" data-wow-delay=".3s" data-wow-duration="500ms">WHAT MAKES ME
+          DIFFERENT?</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      {{ range $index, $element := .Site.Data.skills.skills }}
+      <div class="col-md-4 col-sm-6 d-flex justify-content-center flex-wrap">
+        {{ $delay := mul $index 300 }}
+        <figure class="logo mx-3 wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms"
+          data-wow-delay="{{ $delay }}ms">
+          <div class="img-wrapper">
+            <a href="{{ .blog | absURL }}">
+              <img src="{{ .image | absURL }}" class="img-fluid" alt="{{ .title }}" width="300">
+            </a>
+          </div>
+        </figure>
+        <h5 class="card-title">
+          <a href="{{ .blog }}" class="card-link">{{ .title }}</a>
+        </h5>
+      </div>
+      {{ end }}
+
+
+    </div>
+
+  </div>
+</section>
+{{ "<!-- Skills Section End -->" | safeHTML }}
+{{ end }}

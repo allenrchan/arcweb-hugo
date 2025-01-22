@@ -1,0 +1,35 @@
+enable: true
+experience:
+  - job_title: "Senior Software Developer"
+    company: "Facebook"
+    duration: "Jan 2022 - Present"
+    link: "/"
+    description: "I am currently working as a software developer at Facebook in Menlo Park, CA. I am working on a project that aims to enhance the user experience on social media platforms."
+    bullet_points:
+      - "Developed and maintained scalable web applications."
+      - "Collaborated with cross-functional teams to deliver key features."
+      - "Implemented advanced algorithms to improve system performance."
+  - job_title: "Software Developer"
+    company: "Amazon"
+    duration: "Sep 2020 - Dec 2021"
+    link: "/"
+    bullet_points:
+      - "Designed and implemented backend services using AWS."
+      - "Contributed to improving deployment processes."
+      - "Mentored junior developers on coding best practices."
+  - job_title: "Junior Developer"
+    company: "Google"
+    duration: "Jun 2018 - Aug 2020"
+    link: "/"
+    bullet_points:
+      - "Assisted in developing front-end components for web applications."
+      - "Performed rigorous testing to ensure product quality."
+      - "Optimized code for better performance and readability."
+  - job_title: "Senior Developer"
+    company: "Google"
+    duration: "Jun 2018 - Aug 2020"
+    link: "/"
+    bullet_points:
+      - "Led the development of a critical project feature."
+      - "Enhanced database queries to reduce latency."
+      - "Worked closely with product managers to define requirements."

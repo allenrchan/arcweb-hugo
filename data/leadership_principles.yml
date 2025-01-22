@@ -1,0 +1,11 @@
+enable: true
+principles:
+  - title: "Leadership Principle 1"
+    image: "images/portfolio/item-3.jpg"
+    blog: "/blog/leadership-principles-1"
+  - title: "Leadership Principle 2"
+    image: "images/portfolio/item-3.jpg"
+    blog: "/blog/leadership-principles-2"
+  - title: "Leadership Principle 3"
+    image: "images/portfolio/item-3.jpg"
+    blog: "/blog/leadership-principles-3"

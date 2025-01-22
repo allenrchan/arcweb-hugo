@@ -1,0 +1,131 @@
+<!-- CTA Section -->
+{{ if .Site.Params.cta.enable }}
+<section id="call-to-action">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          {{ with .Site.Params.cta.title }}
+          <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">{{ . }}</h2>
+          {{ end }}
+          {{ with .Site.Params.cta.content }}
+          <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">{{ . | safeHTML }}</p>
+          {{ end }}
+          <a href="javascript:void(0);" id="toggleContactForm" class="btn btn-default btn-contact wow fadeInDown"
+            data-wow-delay=".7s" data-wow-duration="500ms">
+            {{ .Site.Params.cta.btnText }}
+            <span id="toggleArrow">▼</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- Contact Section -->
+{{ if .Site.Data.contact.enable }}
+<section id="contact-section" class="d-none">
+  <div class="container">
+    <div class="row">
+      <!-- Left Column: Contact Form -->
+      <div class="col-md-6 mb-5 mb-md-0">
+        <div class="block">
+          {{ with .Site.Data.contact.contactFormTitle }}
+          <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">{{ . }}</h2>
+          {{ end }}
+          {{ with .Site.Data.contact.contactFormSubtitle }}
+          <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">{{ . }}</p>
+          {{ end }}
+          <div class="contact-form">
+            <form method="POST" action="{{ .Site.Params.contactFormAction }}">
+              <div class="row">
+                <!-- Name Field (Larger width) -->
+                <div class="col-md-6 form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
+                  <input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
+                </div>
+                <!-- Email Field (Smaller width, aligned with Name) -->
+                <div class="col-md-6 form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
+                  <input type="email" placeholder="Your Email" class="form-control" name="email" id="email">
+                </div>
+              </div>
+              <!-- Message Field -->
+              <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
+                <textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>
+              </div>
+              <!-- Submit Button -->
+              <div id="submit" class="d-flex justify-content-end wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
+                <button type="submit" id="contact-submit" class="btn btn-default btn-send hvr-bounce-to-right" value="Send Message">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Contact Information (Aligned with Name Field) -->
+      <div class="col-md-6">
+        <div class="contact-details">
+          <!-- Contact Email and Phone aligned with Name -->
+          <div class="detail-item mb-4">
+            <div class="email wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
+              <i class="ion-ios-email-outline"></i>
+              <h5>{{ with .Site.Data.contact.mail1 }}{{ . }}{{ end }}</h5>
+            </div>
+          </div>
+          <div class="detail-item mb-4">
+            <div class="phone wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".9s">
+              <i class="ion-ios-telephone-outline"></i>
+              <h5>{{ with .Site.Data.contact.phone1 }}{{ . }}{{ end }}<br>{{ with .Site.Data.contact.phone2 }}{{ . }}{{ end }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const toggleButton = document.getElementById("toggleContactForm");
+  const contactSection = document.getElementById("contact-section");
+  const toggleArrow = document.getElementById("toggleArrow");
+
+  toggleButton.addEventListener("click", function () {
+    if (contactSection.classList.contains("d-none")) {
+      // Show the contact section with smooth animation
+      contactSection.classList.remove("d-none");
+      contactSection.classList.add("d-block");
+      toggleArrow.textContent = "▲"; // Change arrow to up
+
+      // Use requestAnimationFrame to ensure scroll happens after the section is visible
+      requestAnimationFrame(function () {
+        // Scroll to the contact section after it's visible
+        setTimeout(function () {
+          contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 300); // Delay to ensure the section is fully rendered
+      });
+    } else {
+      // Collapse the contact section with a smooth animation
+      collapseContactSection();
+    }
+  });
+
+  // Function to collapse the contact section smoothly
+  function collapseContactSection() {
+    contactSection.style.transition = "height 0.5s ease, opacity 0.5s ease"; // Set the transition properties for smooth collapse
+    contactSection.style.height = "0"; // Start collapsing by reducing height
+    contactSection.style.opacity = "0"; // Fade out the section
+
+    // Wait for the transition to complete before hiding the section
+    setTimeout(function () {
+      contactSection.classList.remove("d-block"); // Remove d-block class to fully hide the section
+      contactSection.classList.add("d-none");
+      contactSection.style.height = ""; // Reset height for future animations
+      contactSection.style.opacity = ""; // Reset opacity for future animations
+      toggleArrow.textContent = "▼"; // Change arrow to down
+    }, 500); // Ensure the transition completes before hiding it
+  }
+});
+
+</script>

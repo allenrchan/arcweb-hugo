@@ -1,0 +1,32 @@
+{{ if .Site.Data.associations.enable }}
+{{ "<!-- Associations Section Start -->" | safeHTML }}
+<section id="associations">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="block wow fadeInUp animated mb-5" data-wow-delay=".3s" data-wow-duration="500ms">
+                    ASSOCIATIONS</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            {{ range $index, $association := .Site.Data.associations.associations }}
+            <div class="col-md-2 col-12 d-flex justify-content-center flex-wrap">
+                {{ $delay := mul $index 300 }}
+                <figure class="logo mx-3 wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms"
+                    data-wow-delay="{{ $delay }}ms">
+                    <div class="img-wrapper">
+                        <a href="{{ $association.link | absURL }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ $association.image | absURL }}" class="img-fluid" alt="Association Logo"
+                                width="150">
+                        </a>
+                    </div>
+                </figure>
+            </div>
+            {{ end }}
+        </div>
+        
+    </div>
+</section>
+{{ "<!-- Associations Section End -->" | safeHTML }}
+{{ end }}

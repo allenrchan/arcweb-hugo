@@ -1,0 +1,14 @@
+enable: true
+associations:
+  - image: "images/portfolio/item-5.jpg"
+    link: "https://example.com/"
+  - image: "images/portfolio/item-5.jpg"
+    link: "https://example.com/"
+  - image: "images/portfolio/item-5.jpg"
+    link: "https://example.com/"
+  - image: "images/portfolio/item-5.jpg"
+    link: "https://example.com/"
+  - image: "images/portfolio/item-5.jpg"
+    link: "https://example.com/"
+  - image: "images/portfolio/item-5.jpg"
+    link: "https://example.com/"

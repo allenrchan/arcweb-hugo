@@ -1,0 +1,12 @@
+enable  : true
+skills:
+  - title: "Lean Management"
+    image: "images/portfolio/item-1.jpg"
+    blog: "/blog/lean-management"
+  - title: "Customer Outcome Focus"
+    image: "images/portfolio/item-1.jpg"
+    blog: "/blog/customer-outcome-focus"
+  - title: "24/7 Flexibility"
+    image: "images/portfolio/item-1.jpg"
+    blog: "/blog/flexibility"
+
