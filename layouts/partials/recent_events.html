@@ -1,57 +1,37 @@
 {{ if .Site.Data.recent_events.enable }}
-<section id="recent-events" class="py-5 bg-light">
-    <div class="container">
-        <!-- Section Title -->
-        <div class="row">
-            <div class="col-lg-6">
-                <h2 class="block wow fadeInUp mb-5" data-wow-delay=".3s" data-wow-duration="500ms">RECENT EVENTS</h2>
-            </div>
-        </div>
-        <!-- Events List -->
-        <div class="row">
-            {{ range $index, $event := .Site.Data.recent_events.events }}
-            <div class="col-12 mb-4">
-                <div class="card w-100 border-0 shadow wow fadeInUp" data-wow-duration="500ms"
-                    data-wow-delay="{{ mul $index 300 }}ms">
-                    <div class="row g-0">
-                        <!-- Date Section -->
-                        <div
-                            class="col-md-1 col-3 text-center custom-btn text-white d-flex flex-column align-items-center justify-content-center p-3 rounded-start ps-2 pe-2">
-                            <div class="fs-2 fw-bold">{{ (index (split $event.date " ") 0) }}</div>
-                            <div class="text-uppercase">{{ (index (split $event.date " ") 1) }}</div>
-                            <div class="small">{{ (index (split $event.date " ") 2) }}</div>
-                        </div>
-                        <!-- Image Section -->
-                        <div class="col-md-2 col-4 d-flex align-items-center justify-content-center p-3">
-                            <figure class="logo m-0">
-                                <a href="{{ $event.link | absURL }}" class="d-block">
-                                    <div class="img-wrapper">
-                                        <img src="{{ $event.image | absURL }}" alt="{{ $event.title }}"
-                                            class="img-fluid rounded shadow" style="object-fit: cover; height: auto; width: 100%;">
-                                    </div>
-                                </a>
-                            </figure>
-                        </div>
-                        <!-- Event Details -->
-                        <div class="col-md-9 col-12">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a href="{{ $event.link | absURL }}"
-                                        class="stretched-link card-link text-decoration-none">{{ $event.title }}</a>
-                                </h5>
-                                <p class="card-text text-muted mb-2">
-                                    <i class="bi bi-calendar"></i> {{ $event.date }}
-                                    · <i class="bi bi-clock"></i> {{ $event.time }}
-                                    · <i class="bi bi-geo-alt"></i> {{ $event.location }}
-                                </p>
-                                <p class="card-text">{{ $event.description }}</p>
+<section id="recent-events" class="container py-5">
+    <h2 class="mb-4 wow fadeInUp" data-wow-delay=".3s" data-wow-duration="500ms">RECENTLY EVENT</h2>
+    <div class="row">
+        {{ range $index, $event := .Site.Data.recent_events.events }}
+        <div class="col-12 col-md-6 mb-4 wow fadeInUp" data-wow-duration="500ms"
+            data-wow-delay="{{ mul $index 300 }}ms">
+            <div class="row">
+                <!-- Image Section with Hover Effect -->
+                <div class="col-4">
+                    <figure class="position-relative">
+                        <a href="{{ $event.link | absURL }}" class="d-block">
+                            <div class="img-wrapper">
+                                <img src="{{ $event.image | absURL }}" alt="{{ $event.title }}"
+                                    class="img-fluid rounded shadow" style="object-fit: cover; height: auto; width: 100%;">
                             </div>
-                        </div>
-                    </div>
+                        </a>
+                    </figure>
+                </div>
+                <!-- Event Details -->
+                <div class="col-8">
+                    <h3><a href="{{ $event.link | absURL }}" class="card-link">{{ $event.title }}</a></h3>
+                    <!-- Styled Date -->
+                    <p class="event-date">
+                        <span class="event-day">{{ (index (split $event.date " ") 0) }}</span>
+                        <span class="event-month">{{ (index (split $event.date " ") 1) }}</span>
+                        <span class="event-year">{{ (index (split $event.date " ") 2) }}</span>
+                    </p>
+                    <p><strong>Location:</strong> {{ $event.location }}</p>
+                    <p>{{ $event.description }}</p>
                 </div>
             </div>
-            {{ end }}
         </div>
+        {{ end }}
     </div>
 </section>
 {{ end }}
