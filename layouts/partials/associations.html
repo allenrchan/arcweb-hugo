@@ -10,23 +10,51 @@
             </div>
         </div>
 
-        <div class="row">
+        <!-- Associations Logos for Mobile View -->
+<div class="row mb-4 d-md-none">
+    <div class="col-12">
+        <div class="org-logos-mobile">
             {{ range $index, $association := .Site.Data.associations.associations }}
-            <div class="col-md-2 col-12 d-flex justify-content-center flex-wrap">
-                {{ $delay := mul $index 300 }}
-                <figure class="logo mx-3 wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms"
-                    data-wow-delay="{{ $delay }}ms">
-                    <div class="img-wrapper">
-                        <a href="{{ $association.link | absURL }}" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ $association.image | absURL }}" class="img-fluid" alt="Association Logo"
-                                 srcset="{{ $association.image | absURL }} 768w, {{ $association.image | absURL }} 1024w, {{ $association.image | absURL }} 1280w"
-                                 sizes="(max-width: 768px) 255px, (max-width: 1024px) 300px, 300px">
-                        </a>
-                    </div>
-                </figure>
+            <div class="logo-mobile mx-3 wow fadeInUp animated" 
+                 data-wow-duration="500ms" 
+                 data-wow-delay="{{ mul $index 300 }}ms">
+                <a href="{{ $association.link | absURL }}" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <img src="{{ $association.image | absURL }}" 
+                         alt="Association Logo" 
+                         class="img-fluid" 
+                         width="120">
+                </a>
             </div>
             {{ end }}
         </div>
+    </div>
+</div>
+
+<!-- Associations Logos for Desktop View -->
+<div class="row d-none d-md-flex">
+    {{ range $index, $association := .Site.Data.associations.associations }}
+    <div class="col-md-2 col-12 d-flex justify-content-center flex-wrap">
+        <figure class="logo-desktop mx-3 wow fadeInLeft animated portfolio-item" 
+                data-wow-duration="500ms" 
+                data-wow-delay="{{ mul $index 300 }}ms">
+            <div class="img-wrapper">
+                <a href="{{ $association.link | absURL }}" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <img src="{{ $association.image | absURL }}" 
+                         class="img-fluid" 
+                         alt="Association Logo"
+                         srcset="{{ $association.image | absURL }} 768w, {{ $association.image | absURL }} 1024w, {{ $association.image | absURL }} 1280w"
+                         sizes="(max-width: 768px) 255px, (max-width: 1024px) 300px, 300px">
+                </a>
+            </div>
+        </figure>
+    </div>
+    {{ end }}
+</div>
+
         
     </div>
 </section>
