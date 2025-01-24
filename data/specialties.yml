@@ -1,0 +1,10 @@
+slides:
+  - image: "images/about/about-company.jpg"
+    caption_title: "First Slide Caption"
+    caption_text: "Details about the first slide."
+  - image: "images/about/about-company.jpg"
+    caption_title: "Second Slide Caption"
+    caption_text: "Details about the second slide."
+  - image: "images/about/about-company.jpg"
+    caption_title: "Third Slide Caption"
+    caption_text: "Details about the third slide."
