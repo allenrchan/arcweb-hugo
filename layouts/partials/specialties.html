@@ -20,9 +20,9 @@
                         <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
                             <!-- Ensure responsive images -->
                             <img class="d-block w-100" src="{{ $slide.image }}" alt="Slide {{ add $index 1 }}" style="object-fit: cover;">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5 style="color: white;">{{ $slide.caption_title }}</h5>
-                                <p>{{ $slide.caption_text }}</p>
+                            <div class="carousel-caption d-none d-md-block text-center bg-dark bg-opacity-50 p-3 rounded">
+                                <h5 class="text-white">{{ $slide.caption_title }}</h5>
+                                <p class="text-white">{{ $slide.caption_text }}</p>
                             </div>
                         </div>
                         {{ end }}
@@ -42,5 +42,3 @@
         </div>
     </div>
 </section>
-
-
